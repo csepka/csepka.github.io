@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Digital Design & RTL</title>
+  <title>Christopher J Sepka | Digital Design & RTL</title>
   <style>
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -30,35 +30,100 @@
 </head>
 <body>
 
-<h1>Your Name</h1>
+<h1>Christopher J Sepka</h1>
 <p>
   Digital Design & Verification Engineer<br>
-  SystemVerilog • Verilog • FPGA • Python
+  SystemVerilog • Verilog • Mixed-Signal Interfaces • Scripting • ML Engineering • Python Modeling
 </p>
 
 <p>
-  <a href="#">Resume</a> |
-  <a href="#">GitHub</a> |
-  <a href="#">LinkedIn</a>
+  <a href="https://github.com/MintChocolateChip">GitHub</a> |
+  <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/">LinkedIn</a>
 </p>
 
-<h2>Projects</h2>
+<h2>Hardware Design Projects</h2>
 
 <div class="project">
-  <h3>8-bit ALU (RTL + Verification)</h3>
+  <h3>RISC-V Pipelined Processor</h3>
   <p>
-    Designed and verified an 8-bit ALU supporting arithmetic, logical,
-    shift, and rotate operations.
+    Designed a 32-bit, 3-stage RISC-V processor with data forwarding and cache support,
+    completing a full ASIC design flow.
   </p>
   <ul>
-    <li>Implemented in SystemVerilog with signed/unsigned handling</li>
-    <li>Custom testbench with self-checking tasks</li>
-    <li>Verified edge cases (negative values, shifts, rotates)</li>
+    <li>Implemented RTL in SystemVerilog with hazard handling and pipeline control</li>
+    <li>Integrated direct-mapped cache and data forwarding logic</li>
+    <li>Completed RTL-to-GDS flow using Skywater PDK and Cadence EDA tools</li>
   </ul>
   <p>
     <a href="#">Repository</a>
   </p>
 </div>
+
+<div class="project">
+  <h3>10GB Ethernet MAC Test Environment</h3>
+  <p>
+    Built a comprehensive SystemVerilog verification environment for a 10GB Ethernet MAC design.
+  </p>
+  <ul>
+    <li>Developed driver, monitor, scoreboard, and interface components</li>
+    <li>Implemented functional coverage to validate protocol corner cases</li>
+    <li>Focused on reusable, modular verification architecture</li>
+  </ul>
+  <p>
+    <a href="#">Repository</a>
+  </p>
+</div>
+
+<div class="project">
+  <h3>Single-Precision Floating Point Unit</h3>
+  <p>
+    Designed an IEEE-754 compliant single-precision floating point adder and multiplier.
+  </p>
+  <ul>
+    <li>Implemented arithmetic datapaths with ready/valid handshake protocol</li>
+    <li>Handled normalization, rounding, and special cases</li>
+    <li>Verified functional correctness across corner conditions</li>
+  </ul>
+  <p>
+    <a href="#">Repository</a>
+  </p>
+</div>
+
+<div class="project">
+  <h3>GCD Accelerator Coprocessor</h3>
+  <p>
+    Built a parameterized hardware accelerator for computing the greatest common divisor.
+  </p>
+  <ul>
+    <li>Designed W-bit GCD datapath with control logic</li>
+    <li>Integrated dual 4-deep FIFOs with ready/valid decoupled interfaces</li>
+    <li>Focused on clean parameterization and interface robustness</li>
+  </ul>
+  <p>
+    <a href="#">Repository</a>
+  </p>
+</div>
+
+<h2>Software and AI Projects</h2>
+
+<div class="project">
+  <h3>College Football Playoff AI Tracker</h3>
+  <p>
+    Developed a Python-based system to track, analyze, and evaluate college football
+    playoff scenarios using data-driven modeling.
+  </p>
+  <ul>
+    <li>Collected and processed structured game and ranking data</li>
+    <li>Implemented predictive logic and scoring heuristics in Python</li>
+    <li>Focused on data validation, reproducibility, and clean code structure</li>
+  </ul>
+  <p>
+    <a href="https://github.com/MintChocolateChip/cfp-ai-tracker" target="_blank">
+      Repository
+    </a>
+  </p>
+</div>
+
 
 </body>
 </html>
