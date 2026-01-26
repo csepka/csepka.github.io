@@ -5,125 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christopher J Sepka | Digital Design & RTL</title>
   <style>
+    :root{
+      --max-width: 980px;
+      --muted: #6b7280;
+      --accent: #0066cc;
+      --card-border: #e8eaed;
+      --bg: #fff;
+    }
+    html,body{height:100%;}
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       margin: 0;
-      padding: 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
+      background: var(--bg);
+      color: #0b1220;
+      padding: 28px 18px;
+      display:flex;
+      justify-content:center;
+      line-height:1.55;
     }
-    h1, h2 {
-      line-height: 1.25;
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
     }
-    a {
-      color: #0066cc;
-      text-decoration: none;
+
+    header{
+      margin-bottom: 18px;
     }
-    .project {
-      border-left: 4px solid #eee;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
+    h1{
+      margin:0 0 6px 0;
+      font-size:28px;
+      letter-spacing:-0.02em;
+    }
+    .headline{
+      margin:0 0 12px 0;
+      color:#1f2937;
+    }
+    .links{
+      margin:8px 0 12px 0;
+    }
+    .links a{
+      color:var(--accent);
+      text-decoration:none;
+      margin-right:12px;
+      font-weight:500;
+    }
+    .links a:hover{text-decoration:underline;}
+    .note{
+      color:var(--muted);
+      font-size:0.92rem;
+      margin-top:8px;
+    }
+
+    h2{
+      margin-top:20px;
+      margin-bottom:10px;
+      font-size:18px;
+      border-bottom:1px solid var(--card-border);
+      padding-bottom:8px;
+    }
+
+    .project{
+      border:1px solid var(--card-border);
+      border-radius:10px;
+      padding:14px 16px;
+      margin:12px 0;
+      background:#fff;
+      box-shadow: 0 1px 0 rgba(10,10,10,0.02);
+    }
+    .project h3{
+      margin:0 0 6px 0;
+      font-size:16px;
+    }
+    .project p{
+      margin:0 0 8px 0;
+      color:#111827;
+    }
+    ul{
+      margin:6px 0 0 20px;
+      padding:0;
+    }
+    li{ margin:6px 0; color:#111827; }
+
+    .repo-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:0.92rem;
+    }
+
+    footer{
+      margin-top:26px;
+      padding-top:14px;
+      border-top:1px solid var(--card-border);
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    /* small screens */
+    @media (max-width:520px){
+      body{padding:18px 12px;}
+      h1{font-size:22px;}
+      .project{padding:12px;}
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <h1>Christopher J Sepka</h1>
+      <p class="headline">
+        Digital Design & Verification Engineer<br>
+        RTL • Timing-Aware Design • Python-Based Modeling
+      </p>
 
-<h1>Christopher J Sepka</h1>
-<p>
-  Digital Design & Verification Engineer<br>
-  SystemVerilog • Verilog • Mixed-Signal Interfaces • Scripting • ML Engineering • Python Modeling
-</p>
+      <div class="links">
+        <a href="https://github.com/csepka" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
 
-<p>
-  <a href="https://github.com/MintChocolateChip">GitHub</a> |
-  <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/">LinkedIn</a>
-</p>
+      <p class="note">Selected projects below. Repositories and additional documentation are available on request (or will be linked here soon).</p>
+    </header>
 
-<h2>Hardware Design Projects</h2>
+    <h2>Hardware Design Projects</h2>
 
-<div class="project">
-  <h3>RISC-V Pipelined Processor</h3>
-  <p>
-    Designed a 32-bit, 3-stage RISC-V processor with data forwarding and cache support,
-    completing a full ASIC design flow.
-  </p>
-  <ul>
-    <li>Implemented RTL in SystemVerilog with hazard handling and pipeline control</li>
-    <li>Integrated direct-mapped cache and data forwarding logic</li>
-    <li>Completed RTL-to-GDS flow using Skywater PDK and Cadence EDA tools</li>
-  </ul>
-  <p>
-    <a href="#">Repository</a>
-  </p>
-</div>
+    <div class="project">
+      <h3>RISC-V Pipelined Processor</h3>
+      <p>
+        Designed a 32-bit, 3-stage RISC-V processor with data forwarding and cache support,
+        completing a full ASIC flow from RTL to place-and-route.
+      </p>
+      <ul>
+        <li>Implemented RTL in SystemVerilog with pipeline control and hazard handling</li>
+        <li>Integrated a direct-mapped cache and data forwarding logic</li>
+        <li>Completed RTL-to-GDS flow using Skywater PDK and Cadence EDA tools</li>
+      </ul>
+      <p class="repo-note">Repository: available on request</p>
+    </div>
 
-<div class="project">
-  <h3>10GB Ethernet MAC Test Environment</h3>
-  <p>
-    Built a comprehensive SystemVerilog verification environment for a 10GB Ethernet MAC design.
-  </p>
-  <ul>
-    <li>Developed driver, monitor, scoreboard, and interface components</li>
-    <li>Implemented functional coverage to validate protocol corner cases</li>
-    <li>Focused on reusable, modular verification architecture</li>
-  </ul>
-  <p>
-    <a href="#">Repository</a>
-  </p>
-</div>
+    <div class="project">
+      <h3>10GB Ethernet MAC Test Environment</h3>
+      <p>
+        Built a modular SystemVerilog verification environment for a 10GB Ethernet MAC design.
+      </p>
+      <ul>
+        <li>Developed driver, monitor, scoreboard, and interface components</li>
+        <li>Implemented functional coverage to validate protocol corner cases</li>
+        <li>Focused on reusable, maintainable verification architecture</li>
+      </ul>
+      <p class="repo-note">Repository: available on request</p>
+    </div>
 
-<div class="project">
-  <h3>Single-Precision Floating Point Unit</h3>
-  <p>
-    Designed an IEEE-754 compliant single-precision floating point adder and multiplier.
-  </p>
-  <ul>
-    <li>Implemented arithmetic datapaths with ready/valid handshake protocol</li>
-    <li>Handled normalization, rounding, and special cases</li>
-    <li>Verified functional correctness across corner conditions</li>
-  </ul>
-  <p>
-    <a href="#">Repository</a>
-  </p>
-</div>
+    <div class="project">
+      <h3>Single-Precision Floating Point Unit</h3>
+      <p>
+        Designed an IEEE-754 compliant single-precision floating point adder and multiplier.
+      </p>
+      <ul>
+        <li>Implemented normalization, rounding, and special-case handling</li>
+        <li>Used ready/valid handshake for clean integration</li>
+        <li>Verified functional correctness across corner conditions</li>
+      </ul>
+      <p class="repo-note">Repository: available on request</p>
+    </div>
 
-<div class="project">
-  <h3>GCD Accelerator Coprocessor</h3>
-  <p>
-    Built a parameterized hardware accelerator for computing the greatest common divisor.
-  </p>
-  <ul>
-    <li>Designed W-bit GCD datapath with control logic</li>
-    <li>Integrated dual 4-deep FIFOs with ready/valid decoupled interfaces</li>
-    <li>Focused on clean parameterization and interface robustness</li>
-  </ul>
-  <p>
-    <a href="#">Repository</a>
-  </p>
-</div>
+    <div class="project">
+      <h3>GCD Accelerator Coprocessor</h3>
+      <p>
+        Built a parameterized hardware accelerator for computing greatest common divisor.
+      </p>
+      <ul>
+        <li>Designed W-bit datapath with control logic</li>
+        <li>Integrated dual 4-deep FIFOs and ready/valid decoupled interfaces</li>
+        <li>Validated interface robustness under backpressure</li>
+      </ul>
+      <p class="repo-note">Repository: available on request</p>
+    </div>
 
-<h2>Software and AI Projects</h2>
+    <h2>Software & AI Projects</h2>
 
-<div class="project">
-  <h3>College Football Playoff AI Tracker</h3>
-  <p>
-    Developed a Python-based system to track, analyze, and evaluate college football
-    playoff scenarios using data-driven modeling.
-  </p>
-  <ul>
-    <li>Collected and processed structured game and ranking data</li>
-    <li>Implemented predictive logic and scoring heuristics in Python</li>
-    <li>Focused on data validation, reproducibility, and clean code structure</li>
-  </ul>
-  <p>
-    <a href="https://github.com/MintChocolateChip/cfp-ai-tracker" target="_blank">
-      Repository
-    </a>
-  </p>
-</div>
+    <div class="project">
+      <h3>College Football Playoff AI Tracker</h3>
+      <p>
+        Developed a Python-based system to track, analyze, and evaluate college football
+        playoff scenarios using data-driven modeling.
+      </p>
+      <ul>
+        <li>Collected and processed structured game and ranking data</li>
+        <li>Implemented predictive logic and scoring heuristics in Python</li>
+        <li>Emphasized data validation, reproducibility, and clean code structure</li>
+      </ul>
+      <p class="repo-note">
+        <a href="https://github.com/MintChocolateChip/cfp-ai-tracker" target="_blank" rel="noopener">Repository</a>
+      </p>
+    </div>
 
-
+    <footer>
+      Contact: <a href="mailto:csepka@calpoly.edu">csepka@calpoly.edu</a>
+    </footer>
+  </div>
 </body>
 </html>
