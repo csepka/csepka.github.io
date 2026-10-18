@@ -3,206 +3,498 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christopher J Sepka | Digital Design & RTL</title>
+
+  <title>Christopher J. Sepka | ASIC & RTL Design</title>
+
+  <meta name="description"
+        content="Christopher J. Sepka — ASIC and RTL design, computer architecture, FPGA development, and AI hardware research." />
+
   <style>
-    :root{
+    :root {
       --max-width: 980px;
       --muted: #6b7280;
       --accent: #0066cc;
       --card-border: #e8eaed;
-      --bg: #fff;
+      --bg: #ffffff;
     }
-    html,body{height:100%;}
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family: system-ui, -apple-system, "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
       margin: 0;
       background: var(--bg);
       color: #0b1220;
-      padding: 28px 18px;
-      display:flex;
-      justify-content:center;
-      line-height:1.55;
-    }
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
+      padding: 32px 18px;
+      line-height: 1.6;
     }
 
-    header{
-      margin-bottom: 18px;
-    }
-    h1{
-      margin:0 0 6px 0;
-      font-size:28px;
-      letter-spacing:-0.02em;
-    }
-    .headline{
-      margin:0 0 12px 0;
-      color:#1f2937;
-    }
-    .links{
-      margin:8px 0 12px 0;
-    }
-    .links a{
-      color:var(--accent);
-      text-decoration:none;
-      margin-right:12px;
-      font-weight:500;
-    }
-    .links a:hover{text-decoration:underline;}
-    .note{
-      color:var(--muted);
-      font-size:0.92rem;
-      margin-top:8px;
+    .wrap {
+      max-width: var(--max-width);
+      margin: auto;
     }
 
-    h2{
-      margin-top:20px;
-      margin-bottom:10px;
-      font-size:18px;
-      border-bottom:1px solid var(--card-border);
-      padding-bottom:8px;
+    header {
+      margin-bottom: 28px;
     }
 
-    .project{
-      border:1px solid var(--card-border);
-      border-radius:10px;
-      padding:14px 16px;
-      margin:12px 0;
-      background:#fff;
-      box-shadow: 0 1px 0 rgba(10,10,10,0.02);
-    }
-    .project h3{
-      margin:0 0 6px 0;
-      font-size:16px;
-    }
-    .project p{
-      margin:0 0 8px 0;
-      color:#111827;
-    }
-    ul{
-      margin:6px 0 0 20px;
-      padding:0;
-    }
-    li{ margin:6px 0; color:#111827; }
-
-    .repo-note{
-      margin-top:10px;
-      color:var(--muted);
-      font-size:0.92rem;
+    h1 {
+      margin: 0 0 6px;
+      font-size: 30px;
+      letter-spacing: -0.02em;
     }
 
-    footer{
-      margin-top:26px;
-      padding-top:14px;
-      border-top:1px solid var(--card-border);
-      color:var(--muted);
-      font-size:0.9rem;
+    .headline {
+      margin: 0 0 12px;
+      color: #1f2937;
+      font-size: 16px;
     }
 
-    /* small screens */
-    @media (max-width:520px){
-      body{padding:18px 12px;}
-      h1{font-size:22px;}
-      .project{padding:12px;}
+    .intro {
+      max-width: 850px;
+      margin-top: 16px;
+      color: #374151;
+    }
+
+    .links {
+      margin: 12px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .links a {
+      margin-right: 18px;
+      font-weight: 500;
+    }
+
+    h2 {
+      margin-top: 32px;
+      margin-bottom: 14px;
+      font-size: 20px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+
+    .project {
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 14px 0;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .project p {
+      margin: 0 0 10px;
+      color: #111827;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    .tags {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .repo-note {
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid var(--card-border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .project {
+        padding: 14px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Christopher J Sepka</h1>
-      <p class="headline">
-        Digital Design & Verification Engineer<br>
-        RTL • Timing-Aware Design • Python-Based Modeling
-      </p>
+<div class="wrap">
 
-      <div class="links">
-        <a href="https://github.com/csepka" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+  <header>
 
-      <p class="note">Selected projects below. Repositories and additional documentation are available on request (or will be linked here soon).</p>
-    </header>
+    <h1>Christopher J. Sepka</h1>
 
-    <h2>Hardware Design Projects</h2>
+    <p class="headline">
+      <strong>ASIC & RTL Design | Computer Architecture | AI Hardware</strong>
+      <br>
+      SystemVerilog • FPGA • SoC Design • Digital VLSI
+    </p>
 
-    <div class="project">
-      <h3>RISC-V Pipelined Processor</h3>
-      <p>
-        Designed a 32-bit, 3-stage RISC-V processor with data forwarding and cache support,
-        completing a full ASIC flow from RTL to place-and-route.
-      </p>
-      <ul>
-        <li>Implemented RTL in SystemVerilog with pipeline control and hazard handling</li>
-        <li>Integrated a direct-mapped cache and data forwarding logic</li>
-        <li>Completed RTL-to-GDS flow using Skywater PDK and Cadence EDA tools</li>
-      </ul>
-      <p class="repo-note">Repository: available on request</p>
+    <div class="links">
+      <a href="https://github.com/csepka"
+         target="_blank" rel="noopener noreferrer">GitHub</a>
+
+      <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/"
+         target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+      <a href="mailto:csepka16@berkeley.edu">Email</a>
     </div>
 
-    <div class="project">
-      <h3>10GB Ethernet MAC Test Environment</h3>
-      <p>
-        Built a modular SystemVerilog verification environment for a 10GB Ethernet MAC design.
-      </p>
-      <ul>
-        <li>Developed driver, monitor, scoreboard, and interface components</li>
-        <li>Implemented functional coverage to validate protocol corner cases</li>
-        <li>Focused on reusable, maintainable verification architecture</li>
-      </ul>
-      <p class="repo-note">Repository: available on request</p>
-    </div>
+    <p class="intro">
+      Electrical engineer specializing in digital hardware design,
+      computer architecture, and ASIC development. I earned my B.S.
+      in Electrical Engineering and Computer Sciences from UC Berkeley
+      and am currently pursuing an M.S. in Electrical Engineering
+      at Cal Poly.
 
-    <div class="project">
-      <h3>Single-Precision Floating Point Unit</h3>
-      <p>
-        Designed an IEEE-754 compliant single-precision floating point adder and multiplier.
-      </p>
-      <ul>
-        <li>Implemented normalization, rounding, and special-case handling</li>
-        <li>Used ready/valid handshake for clean integration</li>
-        <li>Verified functional correctness across corner conditions</li>
-      </ul>
-      <p class="repo-note">
-        <a href="https://github.com/csepka/fpu32-core" target="_blank" rel="noopener">Repository</a>
-      </p>
-    </div>
+      My experience includes ASIC memory architecture optimization,
+      RTL development, physical design, and FPGA-based hardware
+      acceleration. My current research focuses on AI-driven control
+      architectures for next-generation wireless systems.
+    </p>
 
-    <div class="project">
-      <h3>GCD Accelerator Coprocessor</h3>
-      <p>
-        Built a parameterized hardware accelerator for computing greatest common divisor.
-      </p>
-      <ul>
-        <li>Designed W-bit datapath with control logic</li>
-        <li>Integrated dual 4-deep FIFOs and ready/valid decoupled interfaces</li>
-        <li>Validated interface robustness under backpressure</li>
-      </ul>
-      <p class="repo-note">Repository: available on request</p>
-    </div>
+  </header>
 
-    <h2>Software & AI Projects</h2>
 
-    <div class="project">
-      <h3>College Football Playoff AI Tracker</h3>
-      <p>
-        Developed a Python-based system to track, analyze, and evaluate college football
-        playoff scenarios using data-driven modeling.
-      </p>
-      <ul>
-        <li>Collected and processed structured game and ranking data</li>
-        <li>Implemented predictive logic and scoring heuristics in Python</li>
-        <li>Emphasized data validation, reproducibility, and clean code structure</li>
-      </ul>
-      <p class="repo-note">
-        <a href="https://github.com/csepka/cfp-ai-tracker" target="_blank" rel="noopener">Repository</a>
-      </p>
-    </div>
+  <!-- RESEARCH -->
 
-    <footer>
-      Contact: <a href="mailto:csepka@calpoly.edu">csepka@calpoly.edu</a>
-    </footer>
+  <h2>Graduate Research</h2>
+
+  <div class="project">
+
+    <h3>
+      FPGA-Based AI Acceleration for Reconfigurable Intelligent Surfaces
+    </h3>
+
+    <p class="subtitle">
+      Master's Thesis Research | Cal Poly
+    </p>
+
+    <p>
+      Developing an FPGA-based hardware control architecture for
+      reconfigurable intelligent surfaces (RIS), enabling programmable
+      wireless environments for next-generation communication systems.
+      The research investigates hardware-efficient AI inference
+      for real-time beamforming and adaptive RIS configuration.
+    </p>
+
+    <ul>
+      <li>
+        Designing a scalable digital control architecture for a
+        10×10 RIS array with 2-bit phase control per element.
+      </li>
+
+      <li>
+        Implementing FPGA-based control logic and serial
+        shift-register interfaces using SystemVerilog.
+      </li>
+
+      <li>
+        Investigating machine learning approaches for
+        channel-aware RIS phase configuration and beam selection.
+      </li>
+
+      <li>
+        Developing an experimental feedback architecture integrating
+        FPGA control, RF measurements, and optimization algorithms.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      AMD Kria KV260, SystemVerilog, FPGA, Python,
+      MATLAB, Machine Learning, RF Systems
+    </p>
+
   </div>
+
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+
+  <h2>Selected Engineering Experience</h2>
+
+  <div class="project">
+
+    <h3>ASIC Design Engineering — Hewlett Packard Enterprise</h3>
+
+    <p class="subtitle">
+      ASIC Design Engineer Intern | Summer 2026
+    </p>
+
+    <p>
+      Worked on memory architecture optimization for
+      high-performance networking ASICs.
+    </p>
+
+    <ul>
+      <li>
+        Reduced SRAM data-bank count by
+        <strong>46%</strong> through architectural redesign
+        while maintaining system throughput.
+      </li>
+
+      <li>
+        Developed multi-pipeline memory architecture techniques
+        incorporating dynamic bank mapping and hazard management.
+      </li>
+
+      <li>
+        Validated functionality through approximately
+        <strong>180,000 verification transactions</strong>
+        using SystemVerilog and UVM-based regression testing.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      SystemVerilog, ASIC Architecture, SRAM,
+      UVM, Cadence Xcelium, Synopsys VCS
+    </p>
+
+  </div>
+
+
+  <!-- HARDWARE PROJECTS -->
+
+  <h2>Selected Hardware Design Projects</h2>
+
+
+  <div class="project">
+
+    <h3>32-bit RISC-V Pipelined Processor</h3>
+
+    <p>
+      Designed and implemented a three-stage RISC-V processor
+      with pipeline forwarding, hazard handling, and
+      direct-mapped cache integration.
+    </p>
+
+    <ul>
+      <li>
+        Developed processor datapath, control logic,
+        and pipeline architecture in SystemVerilog.
+      </li>
+
+      <li>
+        Implemented data forwarding and pipeline
+        hazard resolution.
+      </li>
+
+      <li>
+        Completed RTL-to-GDSII implementation using
+        the SkyWater 130 nm process.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      SystemVerilog, RISC-V, Computer Architecture,
+      RTL-to-GDSII, SkyWater 130 nm
+    </p>
+
+  </div>
+
+
+  <div class="project">
+
+    <h3>AXI-Lite 3×3 Interconnect</h3>
+
+    <p>
+      Designed a multi-master, multi-slave AXI-Lite
+      interconnect for memory-mapped SoC communication.
+    </p>
+
+    <ul>
+      <li>
+        Implemented address decoding, arbitration,
+        and transaction routing.
+      </li>
+
+      <li>
+        Developed RTL supporting multiple masters
+        and slaves with independent communication channels.
+      </li>
+
+      <li>
+        Verified protocol behavior using
+        SystemVerilog simulation and testbenches.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      SystemVerilog, AMBA AXI4-Lite, SoC Interconnect,
+      RTL Design
+    </p>
+
+  </div>
+
+
+  <div class="project">
+
+    <h3>IEEE-754 Single-Precision Floating-Point Unit</h3>
+
+    <p>
+      Designed a 32-bit floating-point arithmetic unit
+      supporting IEEE-754 addition and multiplication.
+    </p>
+
+    <ul>
+      <li>
+        Implemented floating-point arithmetic,
+        normalization, rounding, and special-case handling.
+      </li>
+
+      <li>
+        Integrated ready/valid handshaking for
+        modular hardware integration.
+      </li>
+
+      <li>
+        Developed simulation-based verification
+        for arithmetic corner cases.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      SystemVerilog, IEEE-754, Digital Arithmetic,
+      RTL Design
+    </p>
+
+    <p class="repo-note">
+      <a href="https://github.com/csepka/fpu32-core"
+         target="_blank" rel="noopener noreferrer">
+        View GitHub Repository →
+      </a>
+    </p>
+
+  </div>
+
+
+  <div class="project">
+
+    <h3>10 Gigabit Ethernet MAC Verification</h3>
+
+    <p>
+      Developed a modular SystemVerilog verification environment
+      for a 10 Gigabit Ethernet Media Access Controller.
+    </p>
+
+    <ul>
+      <li>
+        Implemented reusable drivers, monitors,
+        scoreboards, and transaction interfaces.
+      </li>
+
+      <li>
+        Developed functional coverage and
+        protocol-oriented test scenarios.
+      </li>
+
+      <li>
+        Verified MAC functionality using
+        simulation-based regression testing.
+      </li>
+    </ul>
+
+    <p class="tags">
+      <strong>Technologies:</strong>
+      SystemVerilog, Ethernet, Functional Verification,
+      Testbench Architecture
+    </p>
+
+  </div>
+
+
+  <!-- EDUCATION -->
+
+  <h2>Education</h2>
+
+  <div class="project">
+
+    <p>
+      <strong>
+        California Polytechnic State University,
+        San Luis Obispo
+      </strong>
+      <br>
+      M.S. Electrical Engineering — In Progress
+    </p>
+
+    <p>
+      <strong>University of California, Berkeley</strong>
+      <br>
+      B.S. Electrical Engineering and Computer Sciences — 2025
+    </p>
+
+  </div>
+
+
+  <!-- CONTACT -->
+
+  <footer>
+
+    <strong>Contact</strong>
+    <br>
+
+    <a href="mailto:csepka16@berkeley.edu">
+      csepka16@berkeley.edu
+    </a>
+
+    <br><br>
+
+    <a href="https://github.com/csepka"
+       target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+
+    &nbsp;|&nbsp;
+
+    <a href="https://www.linkedin.com/in/christopher-sepka-b44327239/"
+       target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
+
+  </footer>
+
+</div>
 </body>
 </html>
